@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey form</title>
+
+    <style>
+        div {
+            background-color: rgb(0, 117, 201);
+            width: 500px;
+            height: 500px;
+        }
+        form{
+            height: 350px;
+            width: 400px;
+            background-color: white;
+            padding-top: 10px;
+        }
+        h1 {
+            color: white;
+        }
+        button {
+            background-color: rgb(0, 117, 201);;
+        }
+    </style>
+
+  </head>
+  <body>
+    <center>
+        <div>
+            <h1>Customer Survery Form</h1>
+            <form id="surveyForm">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required />
+                <br /><br />
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required />
+                <br /><br />
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required />
+                <br /><br />
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                  <option value="">Select Country</option>
+                  <option value="usa">USA</option>
+                  <option value="india">India</option>
+                </select>
+                <br /><br />
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="male" required />
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">Female</label>
+                <br /><br />
+                <label for="profession">Profession:</label>
+                <input type="text" id="profession" name="profession" required />
+                <br /><br />
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+                <br /><br />
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required />
+                <br /><br />
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+              </form>
+        </div>
+     
+    </center>
+
+    <script>
+        const form = document.querySelector('#surveyForm');
+        
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          
+          const firstName = form.firstName.value;
+          const lastName = form.lastName.value;
+          const dob = form.dob.value;
+          const country = form.country.value;
+          const gender = form.gender.value;
+          const profession = form.profession.value;
+          const email = form.email.value;
+          const mobile = form.mobile.value;
+        
+        
+          alert(`
+          First Name: ${firstName}
+          Last Name: ${lastName} 
+          Date of Birth: ${dob}
+          Country: ${country}
+          Gender: ${gender}
+          Profession: ${profession}
+          Email: ${email}
+          Mobile Number: ${mobile}
+          `);
+        
+        
+          form.reset(); 
+        });
+        </script>
+  </body>
+</html>
